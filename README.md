@@ -1,142 +1,258 @@
-# Kathan Patel - Portfolio Website# 🚀 Modern React Portfolio# React + TypeScript + Vite
+# Kathan Patel - Portfolio Website# Kathan Patel - Portfolio Website# 🚀 Modern React Portfolio# React + TypeScript + Vite
 
-A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features a clean design with smooth animations and mobile-first approach.A beautiful, responsive portfolio website built with React, TypeScript, Tailwind CSS, and Framer Motion. Features a clean design with dark/light mode toggle and smooth animations.This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Live at [kathan.dev](https://kathan.dev)A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features a clean design with smooth animations and mobile-first approach.A beautiful, responsive portfolio website built with React, TypeScript, Tailwind CSS, and Framer Motion. Features a clean design with dark/light mode toggle and smooth animations.This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🚀 Features## ✨ FeaturesCurrently, two official plugins are available:
+## 🚀 Features## 🚀 Features## ✨ FeaturesCurrently, two official plugins are available:
 
-- **Modern Tech Stack**: React 18, TypeScript, Vite- **Modern Design**: Clean, professional layout inspired by top portfolio websites- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- **Modern Tech Stack**: React 18, TypeScript, Vite- **Modern Tech Stack**: React 18, TypeScript, Vite- **Modern Design**: Clean, professional layout inspired by top portfolio websites- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
 
 - **Responsive Design**: Mobile-first approach with Tailwind CSS
 
-- **Smooth Animations**: Framer Motion for engaging user experience- **Responsive**: Mobile-first design that looks great on all devices- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Smooth Animations**: Framer Motion for engaging user experience- **Responsive Design**: Mobile-first approach with Tailwind CSS
 
 - **Dark/Light Theme**: Toggle between themes
 
-- **SEO Optimized**: Meta tags and semantic HTML- **Dark/Light Mode**: Theme toggle with system preference detection
+- **SEO Optimized**: Meta tags and semantic HTML- **Smooth Animations**: Framer Motion for engaging user experience- **Responsive**: Mobile-first design that looks great on all devices- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 - **Performance**: Optimized bundle size and fast loading
 
-- **Accessibility**: ARIA labels and keyboard navigation- **Smooth Animations**: Beautiful animations using Framer Motion## React Compiler
+- **Contact Form**: Functional contact form- **Dark/Light Theme**: Toggle between themes
 
-- **Contact Form**: Functional contact form
+- **Project Showcase**: Interactive project gallery
+
+- **SEO Optimized**: Meta tags and semantic HTML- **Dark/Light Mode**: Theme toggle with system preference detection
+
+## 🛠️ Installation & Setup
+
+- **Performance**: Optimized bundle size and fast loading
+
+1. **Clone the repository**
+
+   ```bash- **Accessibility**: ARIA labels and keyboard navigation- **Smooth Animations**: Beautiful animations using Framer Motion## React Compiler
+
+   git clone https://github.com/kathan1509/my-portfolio.git
+
+   cd portfolio-react- **Contact Form**: Functional contact form
+
+   ```
 
 - **Project Showcase**: Interactive project gallery- **Fast & Optimized**: Built with Vite for lightning-fast development and builds
 
-## 📁 Project Structure- **SEO Friendly**: Proper meta tags and semantic HTML structureThe React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. **Install dependencies**
 
-`````- **Accessible**: Following web accessibility best practices
+   `````````bash## 📁 Project Structure- **SEO Friendly**: Proper meta tags and semantic HTML structureThe React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-portfolio-react/
+   npm install
 
-├── public/## Expanding the ESLint configuration
+   ````````- **Accessible**: Following web accessibility best practices
 
-│   ├── favicon.svg          # Custom portfolio favicon
+   `````````
 
-│   └── index.html## 🛠️ Tech Stack
+3. **Start development server**portfolio-react/
 
-├── src/
+   ```bash
 
-│   ├── components/          # Reusable UI componentsIf you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+   npm run dev├── public/## Expanding the ESLint configuration
 
-│   │   ├── Footer.tsx
+   ```
 
-│   │   ├── Header.tsx- **Frontend**: React 18, TypeScript
+│ ├── favicon.svg # Custom portfolio favicon
 
-│   │   ├── Logo.tsx
+4. **Build for production**
 
-│   │   ├── PageTransition.tsx- **Styling**: Tailwind CSS```js
+   ````bash│ └── index.html## 🛠️ Tech Stack
 
-│   │   └── Typewriter.tsx
+   npm run build
 
-│   ├── sections/            # Main page sections- **Animations**: Framer Motionexport default defineConfig([
+   ```├── src/
+   ````
 
-│   │   ├── About.tsx
+## 🚀 Deployment│ ├── components/ # Reusable UI componentsIf you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-│   │   ├── Contact.tsx- **Icons**: Lucide React globalIgnores(['dist']),
+### GitHub Pages (Current Setup)│ │ ├── Footer.tsx
 
-│   │   ├── FreelancerAdvantages.tsx
+This project is automatically deployed to GitHub Pages at `kathan.dev` using GitHub Actions.│ │ ├── Header.tsx- **Frontend**: React 18, TypeScript
 
-│   │   ├── Hero.tsx- **Build Tool**: Vite {
+#### How it works:│ │ ├── Logo.tsx
 
-│   │   ├── Projects.tsx
+1. **Push to main branch** triggers automatic deployment
 
-│   │   ├── Skills.tsx- **Deployment Ready**: Optimized for production files: ['**/*.{ts,tsx}'],
+2. **GitHub Actions** builds and deploys the site│ │ ├── PageTransition.tsx- **Styling**: Tailwind CSS```js
 
-│   │   └── Testimonials.tsx
+3. **Custom domain** `kathan.dev` is configured
 
-│   ├── data/  extends: [
+4. **HTTPS** is automatically enabled│ │ └── Typewriter.tsx
 
-│   │   └── portfolio.ts     # Portfolio data and configuration
+#### DNS Configuration for kathan.dev:│ ├── sections/ # Main page sections- **Animations**: Framer Motionexport default defineConfig([
 
-│   ├── hooks/## 📋 Prerequisites // Other configs...
+````
 
-│   │   └── useTheme.tsx     # Theme management hook
+Type: A Records│   │   ├── About.tsx
 
-│   ├── App.tsx              # Main app component- Node.js (v16 or higher) // Remove tseslint.configs.recommended and replace with this
+@ → 185.199.108.153
 
-│   ├── main.tsx             # App entry point
+@ → 185.199.109.153│   │   ├── Contact.tsx- **Icons**: Lucide React globalIgnores(['dist']),
 
-│   └── index.css            # Global styles and Tailwind- npm or yarn tseslint.configs.recommendedTypeChecked,
+@ → 185.199.110.153
 
-├── .gitignore
-
-├── package.json      // Alternatively, use this for stricter rules
-
-├── tailwind.config.js       # Tailwind configuration
-
-├── tsconfig.json            # TypeScript configuration## 🚀 Getting Started tseslint.configs.strictTypeChecked,
-
-└── vite.config.ts           # Vite configuration
-
-```      // Optionally, add this for stylistic rules
+@ → 185.199.111.153│   │   ├── FreelancerAdvantages.tsx
 
 
 
-## 🛠️ Installation & Setup1. **Clone the repository** tseslint.configs.stylisticTypeChecked,
+Type: CNAME│   │   ├── Hero.tsx- **Build Tool**: Vite {
+
+www → kathan1509.github.io
+
+```│   │   ├── Projects.tsx
 
 
+
+#### To deploy changes:│   │   ├── Skills.tsx- **Deployment Ready**: Optimized for production files: ['**/*.{ts,tsx}'],
+
+```bash
+
+git add .│   │   └── Testimonials.tsx
+
+git commit -m "Your changes"
+
+git push origin main│   ├── data/  extends: [
+
+````
+
+│ │ └── portfolio.ts # Portfolio data and configuration
+
+The site will automatically build and deploy in 2-3 minutes.
+
+│ ├── hooks/## 📋 Prerequisites // Other configs...
+
+## 📁 Project Structure
+
+│ │ └── useTheme.tsx # Theme management hook
+
+```
+
+portfolio-react/│   ├── App.tsx              # Main app component- Node.js (v16 or higher) // Remove tseslint.configs.recommended and replace with this
+
+├── .github/workflows/       # GitHub Actions for deployment
+
+├── public/│   ├── main.tsx             # App entry point
+
+│   ├── CNAME               # Custom domain configuration
+
+│   ├── favicon.svg         # Custom portfolio favicon│   └── index.css            # Global styles and Tailwind- npm or yarn tseslint.configs.recommendedTypeChecked,
+
+│   └── index.html
+
+├── src/├── .gitignore
+
+│   ├── components/         # Reusable UI components
+
+│   ├── sections/           # Main page sections├── package.json      // Alternatively, use this for stricter rules
+
+│   ├── data/portfolio.ts   # Portfolio data and configuration
+
+│   ├── hooks/              # Custom React hooks├── tailwind.config.js       # Tailwind configuration
+
+│   └── styles/             # Global styles and Tailwind
+
+└── vite.config.ts          # Vite configuration with GitHub Pages optimization├── tsconfig.json            # TypeScript configuration## 🚀 Getting Started tseslint.configs.strictTypeChecked,
+
+```
+
+└── vite.config.ts # Vite configuration
+
+## 🎨 Customization
+
+``````// Optionally, add this for stylistic rules
+
+### Personal Information
+
+Edit `src/data/portfolio.ts` to update:
+
+- Personal details (name, title, bio)
+
+- Contact information and social media links## 🛠️ Installation & Setup1. **Clone the repository** tseslint.configs.stylisticTypeChecked,
+
+- Skills and technologies
+
+- Project information and links
+
+- Testimonials
 
 1. **Clone the repository**   ````bash
 
-   ```bash
+### Styling
 
-   git clone https://github.com/kathan1509/my-portfolio.git   git clone <your-repo-url>      // Other configs...
+- **Colors**: Modify Tailwind color scheme in `tailwind.config.js`   ```bash
 
-   cd portfolio-react
+- **Fonts**: Update font family in `src/index.css`
 
-   ```   cd portfolio-react    ],
-
-
-
-2. **Install dependencies**   ```    languageOptions: {
-
-   ```bash
-
-   npm install      parserOptions: {
-
-`````
-
-`````
-
-3. **Start development server**
-
-```bash2. **Install dependencies** project: ['./tsconfig.node.json', './tsconfig.app.json'],
-
-npm run dev
-
-```   ````bash tsconfigRootDir: import.meta.dirname,
+- **Animations**: Customize Framer Motion settings in components   git clone https://github.com/kathan1509/my-portfolio.git   git clone <your-repo-url>      // Other configs...
 
 
+
+## 🔧 Technologies Used   cd portfolio-react
+
+
+
+- **Frontend**: React 18, TypeScript   ```   cd portfolio-react    ],
+
+- **Styling**: Tailwind CSS
+
+- **Animations**: Framer Motion
+
+- **Icons**: Lucide React
+
+- **Build Tool**: Vite2. **Install dependencies**   ```    languageOptions: {
+
+- **Deployment**: GitHub Pages with Actions
+
+- **Domain**: Custom domain (kathan.dev)   ```bash
+
+
+
+## 📈 Performance   npm install      parserOptions: {
+
+
+
+- **Lighthouse Score**: 95+ on all metrics`````
+
+- **Bundle Size**: Optimized with code splitting
+
+- **SEO**: Semantic HTML and meta tags`````
+
+- **Accessibility**: WCAG compliant
+
+- **Mobile**: Fully responsive design3. **Start development server**
+
+
+
+## 📞 Contact```bash2. **Install dependencies** project: ['./tsconfig.node.json', './tsconfig.app.json'],
+
+
+
+- **Website**: [kathan.dev](https://kathan.dev)npm run dev
+
+- **Email**: kathanpatel.dev@gmail.com
+
+- **GitHub**: [kathan1509](https://github.com/kathan1509)```   ````bash tsconfigRootDir: import.meta.dirname,
+
+- **LinkedIn**: [LinkedIn Profile]
+
+
+
+---
 
 4. **Build for production**   npm install      },
 
+Built with ❤️ and React by Kathan Patel
 ```bash
 
 npm run build   ```      // other options...
 
-```
+``````
 
- },
+},
 
 ## 🎨 Customization
 
@@ -362,3 +478,4 @@ Project Link: [https://your-portfolio-url.com](https://your-portfolio-url.com)
 - [Vite](https://vitejs.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 ```
+`````
