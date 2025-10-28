@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
-import { Quote } from "lucide-react";
+import { Quote, Calendar } from "lucide-react";
 import { testimonials } from "../data/portfolio";
+import { useCalcom } from "../hooks/useCalcom";
 
 export default function Testimonials() {
+  const { getCalProps } = useCalcom("30min");
+
   return (
     <section className="section-padding bg-white dark:bg-gray-900">
       <div className="container-custom">
@@ -88,14 +91,13 @@ export default function Testimonials() {
             Join these satisfied clients who have transformed their business
             with my development expertise.
           </p>
-          <a
-            href="https://calendly.com/kathanpatel"
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            {...getCalProps("kathan-patel/30min")}
             className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 font-medium"
           >
+            <Calendar className="w-5 h-5" />
             Let's Work Together
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>

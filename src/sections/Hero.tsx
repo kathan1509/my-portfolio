@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
-import { Calendar, Mail, Github, Linkedin, Twitter } from "lucide-react";
+import { Calendar, Mail, Github, Linkedin, X } from "lucide-react";
 import Typewriter from "../components/Typewriter";
 import { personalInfo, currentStatus } from "../data/portfolio";
+import { useCalcom } from "../hooks/useCalcom";
 
 export default function Hero() {
+  const { getCalProps } = useCalcom("30min");
+
   const socialLinks = [
     {
       name: "GitHub",
@@ -16,16 +19,16 @@ export default function Hero() {
       icon: "Linkedin",
     },
     {
-      name: "Twitter",
+      name: "X",
       url: "https://x.com/itsmekathan",
-      icon: "Twitter",
+      icon: "X",
     },
   ];
 
   const iconMap = {
     Github,
     Linkedin,
-    Twitter,
+    X,
   };
 
   return (
@@ -38,7 +41,7 @@ export default function Hero() {
 
       {/* Main Content */}
       <div className="relative z-10 w-full">
-        <div className="section-padding">
+        <div className="py-8 sm:py-12 lg:py-16 px-3 sm:px-6 lg:px-8">
           <motion.div
             className="container-custom text-center"
             initial={{ opacity: 0, y: 40 }}
@@ -99,22 +102,29 @@ export default function Hero() {
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 1 }}
             >
-              <a
-                href={personalInfo.calendlyUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                {...getCalProps("kathan-patel/30min")}
                 className="w-full sm:w-auto max-w-xs sm:max-w-none inline-flex items-center justify-center gap-2 px-4 sm:px-6 md:px-8 py-3 sm:py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 font-medium text-sm sm:text-base mobile-button"
               >
                 <Calendar className="w-4 h-4 sm:w-5 sm:h-5" />
                 Schedule a Call
-              </a>
-              <a
-                href={`mailto:${personalInfo.email}`}
-                className="w-full sm:w-auto max-w-xs sm:max-w-none inline-flex items-center justify-center gap-2 px-4 sm:px-6 md:px-8 py-3 sm:py-4 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-300 font-medium text-sm sm:text-base mobile-button"
+              </button>
+              <button
+                onClick={() => {
+                  const contactSection = document.querySelector("#contact");
+                  if (contactSection) {
+                    contactSection.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                    });
+                  }
+                }}
+                className="w-full sm:w-auto max-w-xs sm:max-w-none inline-flex items-center justify-center gap-2 px-4 sm:px-6 md:px-8 py-3 sm:py-4 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg transition-all duration-300 font-medium text-sm sm:text-base mobile-button cursor-pointer"
+                aria-label="Go to contact section"
               >
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
                 Get in Touch
-              </a>
+              </button>
             </motion.div>
 
             {/* Status Section - Mobile Optimized */}

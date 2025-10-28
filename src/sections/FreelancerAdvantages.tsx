@@ -6,8 +6,10 @@ import {
   User,
   Clock,
   Shield,
+  Calendar,
 } from "lucide-react";
 import { freelancerAdvantages, currentStatus } from "../data/portfolio";
+import { useCalcom } from "../hooks/useCalcom";
 
 const iconMap = {
   User,
@@ -19,6 +21,8 @@ const iconMap = {
 };
 
 export default function FreelancerAdvantages() {
+  const { getCalProps } = useCalcom("30min");
+
   return (
     <section className="section-padding bg-gray-50 dark:bg-gray-800/50">
       <div className="container-custom">
@@ -83,15 +87,13 @@ export default function FreelancerAdvantages() {
             discuss your project over a coffee! ☕
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://calendly.com/kathanpatel"
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              {...getCalProps("kathan-patel/30min")}
               className="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 dark:bg-white text-white dark:text-gray-900 rounded-lg hover:bg-gray-800 dark:hover:bg-gray-100 transition-all duration-300 font-medium"
             >
-              <Clock className="w-5 h-5" />
+              <Calendar className="w-5 h-5" />
               Schedule a Call
-            </a>
+            </button>
             <button
               onClick={() => {
                 const contactSection = document.querySelector("#contact");

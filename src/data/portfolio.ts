@@ -18,18 +18,18 @@ export const personalInfo = {
 export const socialLinks = [
   {
     name: "GitHub",
-    url: "https://github.com/kathanpatel",
+    url: "https://github.com/kathan1509",
     icon: "Github",
   },
   {
     name: "LinkedIn",
-    url: "https://linkedin.com/in/kathanpatel",
+    url: "https://linkedin.com/in/patel-kathan/",
     icon: "Linkedin",
   },
   {
-    name: "Twitter",
-    url: "https://twitter.com/kathanpatel",
-    icon: "Twitter",
+    name: "X",
+    url: "https://x.com/itsmekathan",
+    icon: "X",
   },
   {
     name: "Email",
@@ -146,7 +146,7 @@ export const projects = [
       "Crafted a DALL-E Clone with ReactJS and NodeJS, enabling users to generate and explore creative images. Enhanced user engagement by implementing real-time updates through WebSocket integration.",
     image: "/project1.jpg", // Add project image
     technologies: ["ReactJS", "NodeJS", "MongoDB", "WebSocket"],
-    githubUrl: "https://github.com/kathanpatel/dalle-clone",
+    githubUrl: "https://github.com/kathan1509/dalle-clone",
     liveUrl: "https://your-dalle-clone.com",
     featured: true,
   },
@@ -157,7 +157,7 @@ export const projects = [
       "Engineered MovieAPI in Java with Spring Boot, ensuring a scalable solution for efficient movie data management. Optimized data handling by integrating MySQL and MongoDB databases for diverse storage needs.",
     image: "/project2.jpg", // Add project image
     technologies: ["Java", "Spring Boot", "MySQL", "MongoDB"],
-    githubUrl: "https://github.com/kathanpatel/movieapi",
+    githubUrl: "https://github.com/kathan1509/movieapi",
     liveUrl: "https://your-movieapi.com",
     featured: true,
   },
@@ -168,7 +168,7 @@ export const projects = [
       "Leveraged Firebase to build a database and authentication system. Performed CRUD operations in Firestore using Java as the backend for efficient food rescue management.",
     image: "/project3.jpg", // Add project image
     technologies: ["Java", "XML", "Firestore", "GCP", "Firebase Auth"],
-    githubUrl: "https://github.com/kathanpatel/foodresq",
+    githubUrl: "https://github.com/kathan1509/foodresq",
     liveUrl: "https://your-foodresq.com",
     featured: false,
   },

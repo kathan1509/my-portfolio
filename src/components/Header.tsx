@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Logo from "./Logo";
 
 const navigation = [
-  { name: "Home", href: "#home" },
+  { name: "Home", href: "#hero" },
   { name: "About", href: "#about" },
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
@@ -25,12 +25,30 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (href: string, event?: React.MouseEvent) => {
+    if (event) {
+      event.preventDefault();
+      event.stopPropagation();
     }
+
+    // Don't interfere with mailto links
+    if (href.startsWith("mailto:")) {
+      return;
+    }
+
+    // Close mobile menu immediately
     setMobileMenuOpen(false);
+
+    // Small delay to ensure menu closes before scrolling
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }, 100);
   };
 
   return (
@@ -65,7 +83,7 @@ export default function Header() {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + index * 0.1 }}
-              onClick={() => scrollToSection(item.href)}
+              onClick={(e) => scrollToSection(item.href, e)}
               className="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors duration-300 font-medium text-sm lg:text-base"
             >
               {item.name}
@@ -133,8 +151,16 @@ export default function Header() {
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  onClick={() => scrollToSection(item.href)}
-                  className="block w-full text-left py-3 px-4 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300 font-medium rounded-lg text-base"
+                  onClick={(e) => scrollToSection(item.href, e)}
+                  onTouchEnd={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href, e as any);
+                  }}
+                  className="block w-full text-left py-4 px-4 text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300 font-medium rounded-lg text-base touch-manipulation cursor-pointer"
+                  style={{
+                    minHeight: "48px",
+                    WebkitTapHighlightColor: "transparent",
+                  }}
                 >
                   {item.name}
                 </motion.button>

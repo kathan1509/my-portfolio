@@ -7,14 +7,19 @@ import {
   Send,
   Github,
   Linkedin,
-  Twitter,
+  X,
+  CheckCircle,
+  AlertCircle,
+  Loader2,
 } from "lucide-react";
 import { personalInfo, socialLinks } from "../data/portfolio";
+import emailjs from "@emailjs/browser";
+import { emailjsConfig } from "../config/emailjs";
 
 const iconMap = {
   Github,
   Linkedin,
-  Twitter,
+  X,
   Mail,
 };
 
@@ -26,19 +31,64 @@ export default function Contact() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    // You can integrate with services like Netlify Forms, EmailJS, or your own backend
-    console.log("Form submitted:", formData);
+  const [formStatus, setFormStatus] = useState<{
+    type: "idle" | "loading" | "success" | "error";
+    message: string;
+  }>({
+    type: "idle",
+    message: "",
+  });
 
-    // Create mailto link for now
-    const mailtoLink = `mailto:${
-      personalInfo.email
-    }?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    )}`;
-    window.open(mailtoLink);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus({ type: "loading", message: "Sending message..." });
+
+    try {
+      // EmailJS configuration from environment variables or fallback config
+      const serviceId =
+        import.meta.env.VITE_EMAILJS_SERVICE_ID || emailjsConfig.serviceId;
+      const templateId =
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID || emailjsConfig.templateId;
+      const publicKey =
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY || emailjsConfig.publicKey;
+
+      // Check if EmailJS is configured
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error(
+          "EmailJS not configured. Please set up your environment variables or config file."
+        );
+      }
+
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: personalInfo.email, // Your email where you want to receive messages
+      };
+
+      await emailjs.send(serviceId, templateId, templateParams, publicKey);
+
+      setFormStatus({
+        type: "success",
+        message: "Message sent successfully! I'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Email sending failed:", error);
+      setFormStatus({
+        type: "error",
+        message:
+          "Failed to send message. Please try again or contact me directly.",
+      });
+    }
   };
 
   const handleChange = (
@@ -91,8 +141,10 @@ export default function Contact() {
                     Email
                   </h4>
                   <a
-                    href={`mailto:${personalInfo.email}`}
+                    href={`mailto:${personalInfo.email}?subject=Project Inquiry&body=Hi Kathan,%0D%0A%0D%0AI'd like to discuss a project with you.%0D%0A%0D%0ABest regards`}
                     className="text-xs sm:text-sm md:text-base text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 break-all"
+                    title="Send me an email"
+                    aria-label="Send email to Kathan Patel"
                   >
                     {personalInfo.email}
                   </a>
@@ -249,13 +301,46 @@ export default function Contact() {
 
               <motion.button
                 type="submit"
-                className="w-full btn-primary flex items-center justify-center gap-2"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                disabled={formStatus.type === "loading"}
+                className="w-full btn-primary flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                whileHover={{ scale: formStatus.type === "loading" ? 1 : 1.02 }}
+                whileTap={{ scale: formStatus.type === "loading" ? 1 : 0.98 }}
               >
-                <Send className="w-5 h-5" />
-                Send Message
+                {formStatus.type === "loading" ? (
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                ) : (
+                  <Send className="w-5 h-5" />
+                )}
+                {formStatus.type === "loading" ? "Sending..." : "Send Message"}
               </motion.button>
+
+              {/* Status Messages */}
+              {formStatus.type !== "idle" && (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`flex items-center gap-2 p-4 rounded-lg ${
+                    formStatus.type === "success"
+                      ? "bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300"
+                      : formStatus.type === "error"
+                      ? "bg-red-50 dark:bg-red-900/20 text-red-700 dark:text-red-300"
+                      : "bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300"
+                  }`}
+                >
+                  {formStatus.type === "success" && (
+                    <CheckCircle className="w-5 h-5" />
+                  )}
+                  {formStatus.type === "error" && (
+                    <AlertCircle className="w-5 h-5" />
+                  )}
+                  {formStatus.type === "loading" && (
+                    <Loader2 className="w-5 h-5 animate-spin" />
+                  )}
+                  <span className="text-sm font-medium">
+                    {formStatus.message}
+                  </span>
+                </motion.div>
+              )}
             </form>
           </motion.div>
         </div>

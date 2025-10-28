@@ -16,6 +16,7 @@ export default defineConfig({
           vendor: ["react", "react-dom"],
           motion: ["framer-motion"],
           icons: ["lucide-react"],
+          calcom: ["@calcom/embed-react"],
         },
       },
     },
@@ -23,5 +24,13 @@ export default defineConfig({
   server: {
     port: 3000,
     open: true,
+  },
+  define: {
+    // Suppress Cal.com development warnings
+    __DEV__: false,
+  },
+  optimizeDeps: {
+    exclude: ["@calcom/embed-react"],
+    include: ["react", "react-dom", "framer-motion", "lucide-react"],
   },
 });

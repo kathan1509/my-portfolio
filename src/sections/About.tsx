@@ -10,7 +10,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="section-padding bg-gray-50 dark:bg-gray-800/50"
+      className="pt-8 sm:pt-12 lg:pt-16 pb-16 sm:pb-20 lg:pb-24 px-3 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-800/50"
     >
       <div className="container-custom">
         <motion.div

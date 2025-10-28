@@ -1,8 +1,8 @@
-# Kathan Patel - Portfolio Website# Kathan Patel - Portfolio Website# 🚀 Modern React Portfolio# React + TypeScript + Vite
+# 🚀 Modern React Portfolio React + TypeScript + Vite
 
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Live at [kathan.dev](https://kathan.dev)A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS. Features a clean design with smooth animations and mobile-first approach.A beautiful, responsive portfolio website built with React, TypeScript, Tailwind CSS, and Framer Motion. Features a clean design with dark/light mode toggle and smooth animations.This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🚀 Features## 🚀 Features## ✨ FeaturesCurrently, two official plugins are available:
+## 🚀 Features, two official plugins are available:
 
 - **Modern Tech Stack**: React 18, TypeScript, Vite- **Modern Tech Stack**: React 18, TypeScript, Vite- **Modern Design**: Clean, professional layout inspired by top portfolio websites- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
 

@@ -11,6 +11,8 @@
     "deploy": "npm run build && touch dist/CNAME && echo 'kathan.dev' > dist/CNAME"
   },
   "dependencies": {
+    "@calcom/embed-react": "^1.5.3",
+    "@emailjs/browser": "^4.4.1",
     "framer-motion": "^11.5.4",
     "lucide-react": "^0.439.0",
     "react": "^18.3.1",
