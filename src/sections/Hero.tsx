@@ -7,17 +7,17 @@ export default function Hero() {
   const socialLinks = [
     {
       name: "GitHub",
-      url: "https://github.com/kathanpatel",
+      url: "https://github.com/kathan1509",
       icon: "Github",
     },
     {
       name: "LinkedIn",
-      url: "https://linkedin.com/in/kathan-patel-ktk03",
+      url: "https://www.linkedin.com/in/patel-kathan/",
       icon: "Linkedin",
     },
     {
       name: "Twitter",
-      url: "https://twitter.com/ktk_0303",
+      url: "https://x.com/itsmekathan",
       icon: "Twitter",
     },
   ];
