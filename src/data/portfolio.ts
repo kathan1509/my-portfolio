@@ -146,19 +146,19 @@ export const projects = [
       "Crafted a DALL-E Clone with ReactJS and NodeJS, enabling users to generate and explore creative images. Enhanced user engagement by implementing real-time updates through WebSocket integration.",
     image: "/project1.jpg", // Add project image
     technologies: ["ReactJS", "NodeJS", "MongoDB", "WebSocket"],
-    githubUrl: "https://github.com/kathan1509/dalle-clone",
+    githubUrl: "https://github.com/kathan1509/DalleClone",
     liveUrl: "https://your-dalle-clone.com",
     featured: true,
   },
   {
     id: 2,
-    title: "MovieAPI",
+    title: "Video Streaming API",
     description:
-      "Engineered MovieAPI in Java with Spring Boot, ensuring a scalable solution for efficient movie data management. Optimized data handling by integrating MySQL and MongoDB databases for diverse storage needs.",
+      "Engineered a Video Streaming API in NodeJS with Express JS, ensuring a scalable solution for efficient video content management and streaming. Optimized data handling by integrating MySQL and MongoDB databases for diverse storage needs.",
     image: "/project2.jpg", // Add project image
-    technologies: ["Java", "Spring Boot", "MySQL", "MongoDB"],
-    githubUrl: "https://github.com/kathan1509/movieapi",
-    liveUrl: "https://your-movieapi.com",
+    technologies: ["NodeJS", "Express JS", "MySQL", "MongoDB"],
+    githubUrl: "https://github.com/kathan1509/vidtube",
+    liveUrl: "https://your-vidtube.com",
     featured: true,
   },
   {
@@ -168,7 +168,7 @@ export const projects = [
       "Leveraged Firebase to build a database and authentication system. Performed CRUD operations in Firestore using Java as the backend for efficient food rescue management.",
     image: "/project3.jpg", // Add project image
     technologies: ["Java", "XML", "Firestore", "GCP", "Firebase Auth"],
-    githubUrl: "https://github.com/kathan1509/foodresq",
+    githubUrl: "https://github.com/kathan1509/FoodResQ-Main",
     liveUrl: "https://your-foodresq.com",
     featured: false,
   },
