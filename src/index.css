@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-sans leading-relaxed text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900 transition-colors duration-300;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Prevent horizontal scrolling */
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Ensure text wraps properly */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gray-900 hover:bg-gray-800 dark:bg-white dark:hover:bg-gray-100 text-white dark:text-gray-900 font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply bg-transparent border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 font-medium py-3 px-6 rounded-lg transition-all duration-300;
+  }
+
+  .section-padding {
+    @apply py-16 sm:py-20 lg:py-24 px-3 sm:px-6 lg:px-8;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent;
+  }
+
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-sm hover:shadow-md transition-all duration-300;
+  }
+
+  .minimal-hover {
+    @apply hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-200;
+  }
+
+  .minimal-border {
+    @apply border border-gray-200 dark:border-gray-700;
+  }
+
+  .text-primary {
+    @apply text-gray-900 dark:text-white;
+  }
+
+  .text-secondary {
+    @apply text-gray-600 dark:text-gray-400;
+  }
+
+  .text-muted {
+    @apply text-gray-500 dark:text-gray-500;
+  }
+}
+
+/* Mobile-first responsive fixes */
+@media (max-width: 480px) {
+  * {
+    box-sizing: border-box;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .mobile-text-small {
+    font-size: 1.125rem !important; /* 18px */
+    line-height: 1.4;
+  }
+
+  .mobile-spacing {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  .mobile-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    min-height: 44px; /* Touch target minimum */
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Ensure hero content fits */
+  .hero-mobile {
+    min-height: calc(100vh - 80px);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Fix container overflow on mobile */
+  .container-custom {
+    max-width: 100% !important;
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    width: 100%;
+  }
+
+  .section-padding {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+  }
+
+  /* Ensure grids don't overflow */
+  .grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Prevent any element from exceeding viewport */
+  div,
+  section,
+  main,
+  article {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+}
+
+@media (max-width: 375px) {
+  * {
+    box-sizing: border-box !important;
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+
+  .mobile-text-xs {
+    font-size: 1rem !important; /* 16px */
+  }
+
+  .mobile-tight-spacing {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  /* Extra small screen adjustments */
+  .hero-xs {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .button-xs {
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    max-width: calc(100vw - 1rem);
+    box-sizing: border-box;
+  }
+
+  /* Ultra tight spacing for very small screens */
+  .container-custom {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    max-width: 100vw !important;
+    width: calc(100vw - 1rem) !important;
+  }
+
+  .section-padding {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  /* Force all elements to respect viewport width */
+  div,
+  section,
+  main,
+  article,
+  header,
+  footer {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  /* Ensure buttons and form elements fit */
+  button,
+  input,
+  textarea,
+  select {
+    max-width: calc(100vw - 1rem) !important;
+    box-sizing: border-box !important;
+  }
+}
