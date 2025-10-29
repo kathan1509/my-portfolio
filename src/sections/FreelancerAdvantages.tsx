@@ -8,8 +8,9 @@ import {
   Shield,
   Calendar,
 } from "lucide-react";
-import { freelancerAdvantages, currentStatus } from "../data/portfolio";
+import { freelancerAdvantages } from "../data/portfolio";
 import { useCalcom } from "../hooks/useCalcom";
+import { useLocalTime } from "../hooks/useLocalTime";
 
 const iconMap = {
   User,
@@ -22,6 +23,7 @@ const iconMap = {
 
 export default function FreelancerAdvantages() {
   const { getCalProps } = useCalcom("30min");
+  const { time, timezone } = useLocalTime();
 
   return (
     <section className="section-padding bg-gray-50 dark:bg-gray-800/50">
@@ -83,8 +85,7 @@ export default function FreelancerAdvantages() {
             Ready to start your project?
           </h3>
           <p className="text-gray-600 dark:text-gray-400 mb-6">
-            It's {currentStatus.currentTime} {currentStatus.timezone}, let's
-            discuss your project over a coffee! ☕
+            It's {time} {timezone}, let's discuss your project over a coffee! ☕
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button

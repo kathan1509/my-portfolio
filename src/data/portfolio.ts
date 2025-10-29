@@ -4,10 +4,9 @@ export const personalInfo = {
   title: "Application Developer",
   subtitle:
     "I'm an Application Developer & Freelancer who transforms complex business problems into simple, scalable solutions through clean code and innovative design.",
-  email: "kathanpatel15998@gmail.com",
-  phone: "9327749209",
+  email: "hello@kathan.dev",
   location: "Nadiad, GJ",
-  bio: "I specialize in Application Development, Data Engineering, and Cloud Solutions. With 5+ years of experience, I help startups and enterprises build robust data pipelines, scalable web applications, and implement cloud-first architectures. Unlike other developers, I don't just code - I architect solutions that drive real business value.",
+  bio: "I specialize in Application Development, Data Engineering, and Cloud Solutions. With 3+ years of experience, I help startups and enterprises build robust data pipelines, scalable web applications, and implement cloud-first architectures. Unlike other developers, I don't just code - I architect solutions that drive real business value.",
   resumeUrl: "/path-to-your-resume.pdf",
   avatar: "/profile-image.jpg",
   availability: true,
@@ -286,7 +285,7 @@ export const freelancerAdvantages = [
   {
     title: "Technical Expertise",
     description:
-      "5+ years of hands-on experience with modern technologies. I stay updated with industry trends and implement best practices in every project.",
+      "3+ years of hands-on experience with modern technologies. I stay updated with industry trends and implement best practices in every project.",
     icon: "Code",
   },
 ];

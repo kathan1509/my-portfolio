@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { Calendar, Mail, Github, Linkedin, X } from "lucide-react";
 import Typewriter from "../components/Typewriter";
-import { personalInfo, currentStatus } from "../data/portfolio";
+import { personalInfo } from "../data/portfolio";
 import { useCalcom } from "../hooks/useCalcom";
+import { useLocalTime } from "../hooks/useLocalTime";
 
 export default function Hero() {
   const { getCalProps } = useCalcom("30min");
+  const { time, timezone } = useLocalTime();
 
   const socialLinks = [
     {
@@ -135,8 +137,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 1.2 }}
             >
               <div className="text-xs sm:text-sm text-gray-500 dark:text-gray-400">
-                It's {currentStatus.currentTime} {currentStatus.timezone}, let's
-                discuss over a coffee! ☕
+                It's {time} {timezone}, let's discuss over a coffee! ☕
               </div>
 
               {/* Social Links - Mobile Optimized */}
@@ -169,10 +170,8 @@ export default function Hero() {
                 transition={{ duration: 0.6, delay: 1.8 }}
                 className="mt-6 sm:mt-8"
               >
-                <motion.a
-                  href={personalInfo.calendlyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <motion.button
+                  {...getCalProps("kathan-patel/30min")}
                   className="relative inline-flex items-center gap-3 px-4 sm:px-6 py-2 sm:py-3 rounded-full border border-gray-200 dark:border-gray-700 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
@@ -222,7 +221,7 @@ export default function Hero() {
                       delay: 1.5,
                     }}
                   />
-                </motion.a>
+                </motion.button>
 
                 {/* Subtitle */}
                 <motion.p

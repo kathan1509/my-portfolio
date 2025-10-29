@@ -2,7 +2,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Mail,
-  Phone,
   MapPin,
   Send,
   Github,
@@ -147,23 +146,6 @@ export default function Contact() {
                     aria-label="Send email to Kathan Patel"
                   >
                     {personalInfo.email}
-                  </a>
-                </div>
-              </div>
-
-              <div className="flex items-center space-x-4">
-                <div className="p-3 bg-blue-100 dark:bg-blue-900/30 rounded-lg">
-                  <Phone className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 dark:text-white">
-                    Phone
-                  </h4>
-                  <a
-                    href={`tel:${personalInfo.phone}`}
-                    className="text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300"
-                  >
-                    {personalInfo.phone}
                   </a>
                 </div>
               </div>
