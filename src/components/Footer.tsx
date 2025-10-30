@@ -34,7 +34,7 @@ export default function Footer() {
             className="pt-8 border-t border-gray-800 dark:border-gray-700"
           >
             <p className="text-gray-400 flex items-center justify-center gap-2 flex-wrap">
-              <span>© {currentYear} All rights reserved.</span>
+              <span>© {currentYear} Kathan Patel. All rights reserved.</span>
               <span className="hidden sm:inline">•</span>
               <span className="flex items-center gap-1">
                 Made with <Heart className="w-4 h-4 text-red-500" /> in India

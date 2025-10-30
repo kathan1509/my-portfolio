@@ -1,6 +1,7 @@
 import { ThemeProvider } from "./hooks/useTheme";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import AIChat from "./components/AIChat";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 import Skills from "./sections/Skills";
@@ -26,6 +27,7 @@ function App() {
             <Contact />
           </main>
           <Footer />
+          <AIChat />
         </div>
       </PageTransition>
     </ThemeProvider>
