@@ -36,14 +36,14 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen xs:min-h-[90vh] sm:min-h-[85vh] lg:min-h-[80vh] xl:min-h-[85vh] flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 hero-mobile hero-xs pt-20 xs:pt-18 sm:pt-16 lg:pt-20"
+      className="relative min-h-screen xs:min-h-[90vh] sm:min-h-[85vh] md:min-h-[75vh] lg:min-h-[70vh] xl:min-h-[75vh] flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-50 dark:from-gray-900 dark:via-gray-950 dark:to-gray-900 hero-mobile hero-xs pt-24 xs:pt-20 sm:pt-16 md:pt-14 lg:pt-16"
     >
       {/* Background Grid Pattern */}
       <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cGF0aCBkPSJNIDQwIDAgTCAwIDAgMCA0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDIxOSwgMjE5LCAyMTksIDAuMSkiIHN0cm9rZS13aWR0aD0iMSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmlkKSIvPjwvc3ZnPg==')] opacity-30"></div>
 
       {/* Main Content */}
       <div className="relative z-10 w-full">
-        <div className="py-4 xs:py-5 sm:py-8 lg:py-12 xl:py-16 px-3 sm:px-6 lg:px-8">
+        <div className="py-4 xs:py-5 sm:py-8 md:py-6 lg:py-8 xl:py-12 px-3 sm:px-6 lg:px-8">
           <motion.div
             className="container-custom text-center"
             initial={{ opacity: 0, y: 40 }}
@@ -61,10 +61,7 @@ export default function Hero() {
                 Hey 👋, I'm
               </span>
               <span className="block bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
-                {personalInfo.name.split(" ")[0]}
-              </span>
-              <span className="block text-gray-700 dark:text-gray-300">
-                {personalInfo.name.split(" ")[1]}
+                {personalInfo.name}
               </span>
             </motion.h1>
 
@@ -99,7 +96,7 @@ export default function Hero() {
 
             {/* CTA Buttons - Mobile Optimized */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 justify-center items-center mb-4 xs:mb-6 sm:mb-12 lg:mb-16 w-full max-w-xs xs:max-w-sm sm:max-w-none mx-auto"
+              className="flex flex-col sm:flex-row gap-2 xs:gap-3 sm:gap-4 justify-center items-center mb-4 xs:mb-6 sm:mb-8 md:mb-6 lg:mb-8 w-full max-w-xs xs:max-w-sm sm:max-w-none mx-auto"
               initial={{ y: 20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 1 }}
